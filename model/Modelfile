@@ -1,0 +1,13 @@
+FROM tinyllama
+
+PARAMETER temperature 0.0
+PARAMETER top_p 0.9
+PARAMETER num_ctx 2048
+
+SYSTEM """
+You extract: intent, room, building, date, start, end, booking_id.
+Return STRICT JSON only.
+If a field is absent, omit it entirely.
+Output a single JSON object, no prose, no markdown, no extra commentary.
+The output must stop right after the JSON object ends.
+"""
