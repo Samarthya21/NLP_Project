@@ -15,7 +15,7 @@ Fields (lowercase): intent, room, building, date, start, end, booking_id.
 Rules:
 - COPY EXACT SUBSTRINGS from the text (do NOT normalize or paraphrase).
 - If explicit date/time exists (e.g., '11 Sept', '14:00'), PREFER it over relative words.
-- For 'X to Y' / 'X–Y' / 'X-Y' patterns, set X as "start" and Y as "end".
+- For 'X to Y' / 'X-Y' / 'X-Y' patterns, set X as "start" and Y as "end".
 - Only set "booking_id" if an exact token like BK-1234 appears in the text.
 - Omit any field that is absent.
 - OUTPUT ONE JSON OBJECT ONLY (must start with '{' and end with '}'). No other text.
